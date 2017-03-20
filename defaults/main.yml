@@ -1,0 +1,15 @@
+---
+
+# Add action "Open with Atom" to Nemo (true | false).
+atom_add_action: false
+
+# Nemo action template.
+atom_action_template: templates/atom.nemo_action.j2
+
+# User list that will deploy the Nemo action "Open with Atom". The default will get the ansible user.
+atom_users:
+  - {
+      name: "{{ ansible_user_id }}",
+      home: "{{ ansible_user_dir }}",
+      conf: "",
+    }

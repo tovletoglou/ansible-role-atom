@@ -1,0 +1,15 @@
+# Custom action for Nemo File Manager for Cinnamon.
+# Adds right-click open file/files or directory with Atom.
+# Place it under: ~/.local/share/nemo/actions/atom.nemo_action
+# For more info: https://github.com/linuxmint/nemo/blob/master/files/usr/share/nemo/actions/sample.nemo_action
+
+[Nemo Action]
+Active=true
+Name=Open in _Atom
+Comment=Open %F in Atom
+Exec=atom %F
+Icon-Name=atom
+Selection=any
+Extensions=any;
+Dependencies=atom;
+Quote=double
