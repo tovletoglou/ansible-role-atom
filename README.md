@@ -1,6 +1,6 @@
 # Ansible Role: Atom
 
-Install (Atom](<https://www.atom.io/>) from rpm.
+Install [Atom](<https://www.atom.io/>) from rpm.
 
 ## Requirements
 
