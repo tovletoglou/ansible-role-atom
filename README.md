@@ -12,21 +12,21 @@ The role may run on other systems, but it is not tested.
 
 ## Role Variables
 
-Add action "Open with Atom" to Nemo (true | false).
+Add action "Open with Atom" to Nemo (`true | false`).
 
-```
+```yml
 atom_add_action: false
 ```
 
 Nemo action template.
 
-```
+```yml
 atom_action_template: templates/atom.nemo_action.j2
 ```
 
 User list that will deploy the Nemo action "Open with Atom". The default will get the ansible user.
 
-```
+```yml
 atom_users:
   - {
       name: "{{ ansible_user_id }}",
@@ -37,7 +37,7 @@ atom_users:
 
 ## Example
 
-```
+```yml
 - hosts: all
   roles:
     - ansible-role-atom
@@ -48,7 +48,7 @@ In the next example I use custom vars to:
 - define a user list
 - link the firs user's Atom configuration to another directory to make it portable
 
-```
+```yml
 - hosts: all
   roles:
     - ansible-role-atom
