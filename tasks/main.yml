@@ -27,7 +27,7 @@
     mode: 0755
     owner: "{{ item.name }}"
     group: "{{ item.name }}"
-  when: "'{{ item.name }}' in system_users.stdout_lines and {{ atom_add_action }}"
+  when: item.name in system_users.stdout_lines and atom_add_action
   with_items: "{{ atom_users }}"
 
 - name: Add action "Open with Atom" to Nemo
@@ -39,7 +39,7 @@
     mode: 0664
     owner: "{{ item.name }}"
     group: "{{ item.name }}"
-  when: "'{{ item.name }}' in system_users.stdout_lines and {{ atom_add_action }}"
+  when: item.name in system_users.stdout_lines and atom_add_action
   with_items: "{{ atom_users }}"
 
 - name: Link Atom configuration with portable directory
@@ -51,5 +51,5 @@
     owner: "{{ item.name }}"
     group: "{{ item.name }}"
     state: link
-  when: "'{{ item.name }}' in system_users.stdout_lines and '{{ item.conf }}' != ''"
+  when: item.name in system_users.stdout_lines and item.conf != ''
   with_items: "{{ atom_users }}"
