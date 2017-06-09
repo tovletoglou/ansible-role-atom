@@ -33,12 +33,13 @@
 - name: Add action "Open with Atom" to Nemo
   become: yes
   become_user: "{{ item.name }}"
-  copy:
+  template:
     src: "{{ atom_action_template }}"
     dest: "{{ item.home }}/.local/share/nemo/actions/atom.nemo_action"
     mode: 0664
     owner: "{{ item.name }}"
     group: "{{ item.name }}"
+    backup: yes
   when: item.name in system_users.stdout_lines and atom_add_action
   with_items: "{{ atom_users }}"
 
